@@ -39,7 +39,7 @@ spec:
            - name: AZURE_DEVOPS_ORGANISATION
              value: "isapur-hat"
            - name: AZURE_DEVOPS_ACCESS_TOKEN
-             value: "p3rjogea44y3mulpbqc2awmeubknxkglx26l55fvq2svmvfyktza"
+             value: "PAT-token"
           ports:
             - name: http
               containerPort: 8080
