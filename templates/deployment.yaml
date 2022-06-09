@@ -18,11 +18,14 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
            - name: AZURE_DEVOPS_URL
-             value: "https://dev.azure.com"
+             value:  "{{ .Values.azureDevops.url }}"
            - name: AZURE_DEVOPS_ORGANISATION
-             value: "isapur-hat"
+             value: "{{ .Values.azureDevops.org }}"
            - name: AZURE_DEVOPS_ACCESS_TOKEN
-             value: "giyuvun5n7o3ecdvwrmx6ychytfaamictfy4sjhpnw7tgvcdurqa"
+             valueFrom: 
+               secretKeyRef: 
+                 key: azure-devops-token
+                 name: azure-devops-secret-token
           ports:
             - name: http
               containerPort: 8080

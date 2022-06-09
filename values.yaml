@@ -9,3 +9,8 @@ image:
 service:
   type: ClusterIP
   port: 8080
+
+azureDevops:
+  token: Z2l5dXZ1bjVuN28zZWNkdndybXg2eWNoeXRmYWFtaWN0Znk0c2pocG53N3RndmNkdXJxYQ==
+  url: https://dev.azure.com
+  org: isapur-hat
