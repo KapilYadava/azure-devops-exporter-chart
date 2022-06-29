@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: azure-devops-exporter-deployment
+  name: {{ .Release.Name }}-deployment
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: azure-devops-exporter-pod
+      app: {{ .Release.Name }}-pod
   template:
     metadata:
       labels:
-        app: azure-devops-exporter-pod
+        app: {{ .Release.Name }}-pod  #pod label must be same as selector match labels
     spec:
       containers:
         - name: {{ .Chart.Name }}
@@ -25,8 +25,8 @@ spec:
              valueFrom: 
                secretKeyRef: 
                  key: azure-devops-token
-                 name: azure-devops-secret-token
+                 name: {{ .Release.Name }}-secret-token
           ports:
             - name: http
-              containerPort: 8080
+              containerPort: {{ .Values.image.containerPort }}
               protocol: TCP

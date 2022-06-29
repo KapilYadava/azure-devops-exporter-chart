@@ -5,12 +5,13 @@ image:
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"
+  containerPort: 8080
 
 service:
   type: ClusterIP
   port: 8080
 
 azureDevops:
-  token: Z2l5dXZ1bjVuN28zZWNkdndybXg2eWNoeXRmYWFtaWN0Znk0c2pocG53N3RndmNkdXJxYQ==
+  token: anJldHFseTVvcnc1cGpkcmx4YmZjN2p5bnRubzU3aDVnc2FrczZvZHRza3h2emxlYWpvYQ==
   url: https://dev.azure.com
   org: isapur-hat
