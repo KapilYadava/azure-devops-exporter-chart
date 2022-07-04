@@ -3,8 +3,15 @@ kind: Ingress
 metadata:
   name: {{ .Release.Name }}-ingress
 spec:
+  # enable ingress controller (eg. nginx) in minikube or add impl in your cluster
+  # minikube addons enable/disable ingress
+  # ingress controller: eveluate all ingress rule, manage redirection, entrypoint to cluster, many-third party impl
+  # NAME         CLASS    HOSTS            ADDRESS        PORTS   AGE
+  # ex-ingress   <none>   myexporter.com   192.168.49.2   80      13m
+  # 192.168.49.2 is minikube ip (public ip)
+  # map this ip to myexporter.com in /etc/hosts
   rules:
-  - host: myexporter.com
+  - host: myexporter.com  
     http:
       paths:
       - path: /
