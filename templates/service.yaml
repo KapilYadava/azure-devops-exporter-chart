@@ -3,7 +3,10 @@ kind: Service
 metadata:
   name: {{ .Release.Name }}-service
 spec:
-  type: {{ .Values.service.type }}  # by defalut service type is ClusterIP
+  # by defalut service type is ClusterIP 
+  # (Internal networking, can't be accessed by external service or client) 
+  # NodePort service can be access by external services
+  type: {{ .Values.service.type }}  
   ports:
     - port: {{ .Values.service.port }}
       targetPort: http
