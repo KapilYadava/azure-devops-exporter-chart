@@ -33,6 +33,6 @@ stages:
               azureResourceGroup: 'azuretestrg'
               kubernetesCluster: 'myaks'
               command: 'install'
-              chartType: 'Name'
-              chartName: 'exporter-chart'
+              chartPath: '.'
+              chartVersion: $(Build.BuildId)
           
