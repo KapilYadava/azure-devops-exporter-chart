@@ -1,0 +1,30 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+stages:
+  - stage: Helm Package and Install to AKS cluster
+    displayName: Helm Package and Install to AKS cluster
+    jobs:
+      - job: CreatePackage
+        displayName: Create Helm Package
+        steps:
+          - task: HelmDeploy@0
+            inputs:
+              command: 'package'
+              chartPath: '.'
+          - task: PublishPipelineArtifact@1
+            inputs:
+              targetPath: '$(Build.ArtifactStagingDirectory)'
+              artifact: 'exporter-chart'
+              publishLocation: 'pipeline'
+
+
+
