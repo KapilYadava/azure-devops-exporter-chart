@@ -26,7 +26,3 @@ stages:
               targetPath: '$(Build.ArtifactStagingDirectory)'
               artifact: 'exporter-chart'
               publishLocation: 'pipeline'
-              
-
-
-
