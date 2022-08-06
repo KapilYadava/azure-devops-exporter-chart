@@ -10,7 +10,7 @@ pool:
   vmImage: ubuntu-latest
 
 stages:
-  - stage: Helm Package and Install to AKS cluster
+  - stage: HelmPackage
     displayName: Helm Package and Install to AKS cluster
     jobs:
       - job: CreatePackage
