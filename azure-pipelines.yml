@@ -33,6 +33,6 @@ stages:
               azureResourceGroup: 'azuretestrg'
               kubernetesCluster: 'myaks'
               command: 'install'
-              chartType: 'FilePath'
-              chartPath: '$(System.DefaultWorkingDirectory)/KapilYadava.azure-devops-exporter-chart'
-              chartVersion: '$(Build.BuildId)'
+              chartType: 'Name'
+              chartName: 'exporter-chart'
+          
