@@ -26,3 +26,13 @@ stages:
               targetPath: '$(Build.ArtifactStagingDirectory)'
               artifact: 'exporter-chart'
               publishLocation: 'pipeline'
+          - task: HelmDeploy@0
+            inputs:
+              connectionType: 'Azure Resource Manager'
+              azureSubscription: 'Free Trial(9aa7f2ca-18ba-4733-abc7-a3824511edf0)'
+              azureResourceGroup: 'azuretestrg'
+              kubernetesCluster: 'myaks'
+              command: 'install'
+              chartType: 'FilePath'
+              chartPath: '$(Build.ArtifactStagingDirectory)'
+              chartVersion: '$(Build.BuildId)'
