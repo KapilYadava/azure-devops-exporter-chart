@@ -33,6 +33,7 @@ stages:
               azureResourceGroup: 'azuretestrg'
               kubernetesCluster: 'myaks'
               command: 'install'
+              chartType: 'FilePath'
               chartPath: '.'
               chartVersion: $(Build.BuildId)
           
