@@ -34,5 +34,5 @@ stages:
               kubernetesCluster: 'myaks'
               command: 'install'
               chartType: 'FilePath'
-              chartPath: '$(System.DefaultWorkingDirectory)/_KapilYadava.azure-devops-exporter-chart/azure-devops-exporter-*.tgz'
+              chartPath: '$(System.DefaultWorkingDirectory)/KapilYadava.azure-devops-exporter-chart'
               chartVersion: '$(Build.BuildId)'
